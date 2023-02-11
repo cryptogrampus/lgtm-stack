@@ -4,3 +4,21 @@ repositories:
 
 - name: grafana
   url: https://grafana.github.io/helm-charts
+
+releases:
+- name: kube-prometheus-stack
+  namespace: monitoring
+  chart: prometheus-community/kube-prometheus-stack
+  disableValidationOnInstall: true
+
+- name: grafana-mimir
+  namespace: monitoring
+  chart: grafana/mimir-distributed
+
+- name: loki-distributed
+  namespace: monitoring
+  chart: grafana/loki-distributed
+
+- name: tempo-distributed
+  namespace: monitoring
+  chart: grafana/tempo-distributed
